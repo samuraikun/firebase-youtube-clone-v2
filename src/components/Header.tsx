@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { withFirebase } from 'react-redux-firebase';
-import { State } from '../App';
 import firebase from '../config/firebase';
 import {
   Menu,
@@ -14,6 +13,13 @@ interface Props {
   auth: firebase.auth.Auth;
   profile: firebase.UserInfo;
   socialLogin: (selectedProvider: string) => void;
+};
+
+interface State {
+  firebase: {
+    auth: firebase.auth.Auth;
+    profile: firebase.UserInfo;
+  }
 };
 
 const actions = {
